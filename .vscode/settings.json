@@ -1,0 +1,14 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src",
+    ],
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        "${workspaceFolder}/data": true,
+        "${workspaceFolder}/outputs": true,
+        "${workspaceFolder}/results": true
+    }
+}

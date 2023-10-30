@@ -1,0 +1,6 @@
+rich
+hydra-core
+matplotlib
+torch
+tqdm
+pandas
