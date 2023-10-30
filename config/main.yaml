@@ -1,0 +1,22 @@
+defaults:
+  - hydra: default
+  - _self_
+
+# CUSTOM CONFIGURATIONS BELOW
+lr: 1.2e-3  # Learning rate
+batch_size: 60
+start_iter: 0
+num_epochs: 100
+print_freq: 1
+valid_freq: 1
+resume: true
+prune_type: lt  # lt | reinit
+gpu: "0"
+dataset: mnist  # mnist | cifar10 | fashionmnist | cifar100
+arch_type: fc1  # fc1 | lenet5 | alexnet | vgg16 | resnet18 | densenet121
+prune_percent: 10  # Pruning percent
+prune_iterations: 35  # Pruning iterations count
+data_root: null
+
+debug: false # Debug mode
+

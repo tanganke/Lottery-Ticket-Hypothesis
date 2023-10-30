@@ -1,5 +1,0 @@
-defaults:
-  - hydra: default
-  - _self_
-
-# CUSTOM CONFIGURATIONS BELOW

@@ -15,7 +15,7 @@ import sys
 import time
 from copy import deepcopy
 from pathlib import Path
-from typing import Any, Callable, Dict, Iterable, List, Tuple, Union
+from typing import Any, Callable, Dict, Iterable, List, Literal, Optional, Tuple, Union
 
 import hydra
 import matplotlib as mpl
