@@ -12,6 +12,8 @@ from src.utils import timeit_context
 def load_data(
     dataset: Literal["mnist", "cifar10", "fashionmnist", "cifar100"],
     batch_size: int,
+    num_workers: int = 0,
+    pin_memory: bool = False,
     data_root: str = DATA_DIR,
     download: bool = True,
 ):
@@ -41,7 +43,8 @@ def load_data(
         train_dataset,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=0,
+        num_workers=num_workers,
+        pin_memory=pin_memory,
         drop_last=False,
     )
     # train_loader = cycle(train_loader)
@@ -49,7 +52,8 @@ def load_data(
         test_dataset,
         batch_size=batch_size,
         shuffle=False,
-        num_workers=0,
+        num_workers=num_workers,
+        pin_memory=pin_memory,
         drop_last=True,
     )
 
@@ -275,7 +279,13 @@ def main(args: DictConfig):
     os.makedirs(dump_dir, exist_ok=True)
 
     with timeit_context("load dataset"):
-        train_loader, test_loader = load_data(args.dataset, args.batch_size, args.data_root)
+        train_loader, test_loader = load_data(
+            args.dataset,
+            batch_size=args.batch_size,
+            num_workers=args.num_workers,
+            pin_memory=args.pin_memory,
+            data_root=args.data_root,
+        )
     with timeit_context("load model"):
         model = load_model(args.dataset, args.arch_type, device=device)
 

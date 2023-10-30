@@ -5,6 +5,9 @@ defaults:
 # CUSTOM CONFIGURATIONS BELOW
 lr: 1.2e-3  # Learning rate
 batch_size: 60
+num_workers: 8
+pin_memory: true
+
 start_iter: 0
 num_epochs: 100
 print_freq: 1
